@@ -61,7 +61,7 @@ All transaction are logged into separet logs files of accepted, skipped, and dup
 Finally, upon use approval:
 1. All changes are saved.
 2. The input file is copied and its sha256 is added to its name (this prevents name colusion and allow content verification)
-3. All changes are added to the local git repository and comitted with a comment deisgnating the transaction inout file name responsible for the update.
+3. All changes are added to the local git repository and comitted with a comment deisgnating the transaction input file name responsible for the update.
 
 ### Adding manual entries (e.g. checks)
 *Expense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g. "check:1011") and then fed into the the system, which will save the "manual" input file together with all other input file for ltare restore or verification.
@@ -84,7 +84,9 @@ Some changes are more dangerous and should be done with cations. Also these chag
 3. Manually add entry to the exel file
 4. Manually remore wrong category signature from the category json file.
 
-If you apply any change manually, it is recommended to update the git manually with a proper comment describing the change. 
+If you apply any change manually, it is recommended to update the git manually with a proper comment describing the change.
+
+If you mistakenly break the system, the system can be restored from **git**.
 
 ## TODO
 1. Set column width and alignmnet automatically.
