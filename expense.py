@@ -3,7 +3,7 @@
 # NO-FRILS text only expense tracker for sole proprietorship
 # 
 # See README.md for documentation and usage instruction
-# at github:
+# at github: https://github.com/mbe2014/Expense
 #       
 # Copyright (c) 2021, Moshe Ben-Ezra
 # All rights reserved.
