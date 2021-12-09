@@ -1,6 +1,6 @@
-# Expense - NO-FRILS expense tracker
+# Expense - NO-FRILLS expense tracker
 
-NO-FRILS text only expense tracker for small business sole proprietorship
+NO-FRILLS text only expense tracker for small business sole proprietorship
 
 ### Highlights and features
 
