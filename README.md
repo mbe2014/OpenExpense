@@ -31,7 +31,7 @@ These features, especially detection of duplicates, normalization of the transac
 
 ### Example:
 "expense.py init 2021"                      - initializes a repository named 2021\
-         "expense.py import 2021 Jan-stmt-17.xlsx"   - import transactions\
+         "expense.py import 2021 Jan-stmt-17.xlsx"   - import transactions
 
 ## Description
 *Expense* is designed to help small businesses and sole proprietors to keep track of their expenses for bookkeeping and tax-related purposes.
