@@ -1,26 +1,26 @@
 # Expense - NO-FRILLS expense tracker
 
-NO-FRILLS text only expense tracker for small business sole proprietorship
+NO-FRILLS text only expense tracker for a small business or sole proprietorship
 
-This program only do one thing - process transctions from form excel files
-such as acnk transactions, credic card trabsaction and PayPal transactions,
-Categorize them by IRS 1040 Scheduel-C categories, and keep a very good tracking
-of everything with a continous backups of everything at a single file import granularity.
+This program only does one thing - process transactions from excel files
+such as bank transactions, credit card transactions, and PayPal transactions,
+Categorize them by IRS 1040 Schedule-C categories, and keep an excellent tracking
+of everything with continuous backups of everything at a single file import granularity.
 
 
 ### Highlights and features
 
 - Automatically identify data headers.
-- Categorize transaction according to 1040 Schedule C expence caterogies.
-- Remember and automatically categorize recurring transcations.
-- All data is kept in visible Excel, CSV, or JSON format. No proprietery formats are used.
-- Automaticaly detect duplicate transactios by reference number/ID.
-- Keep logs of ALL transactions including transactions that were accepted, skipped or deemd duplicates with their origin so everything can be tracked to its source and verified if needed.
+- Categorize transactions according to 1040 Schedule C expense categories.
+- Remember and automatically categorize recurring transactions.
+- All data is kept in visible Excel, CSV, or JSON format. No proprietary formats are used.
+- Automatically detect duplicate transactions by reference number/ID.
+Keep logs of ALL transactions, including accepted, skipped, or deemed duplicates with their origin, so everything can be tracked to its source and verified if needed.
 - Automatically copy and save all input files with their sha256 hash.
 - Automatically create a local git repository and backup the entire repo with log files and input files. The git repository is updated after each import with a proper log entry so the repository can be restored at input file granularity.
-- Normalize all expense amount to positive numbers.
+- Normalize expense amount to positive numbers.
 
-These features, especially detection of duplilcates,nomalization on transaction amount and backup and restore capability can prevent havock cause by overlapping entries, user mistakes, and inconsistent sign convention from different sources.
+These features, especially detection of duplicates, normalization of the transaction amount, and backup and restore capability, can prevent havoc caused by overlapping entries, user mistakes, and inconsistent sign conventions from different sources.
 
 
 ### Usage:
@@ -30,17 +30,17 @@ These features, especially detection of duplilcates,nomalization on transaction 
         "expense.py restore \<restore point\>   - reserved
 
 ### Example:
-"expense.py init 2021"                      - initializes a reposirory names 2021\
+"expense.py init 2021"                      - initializes a repository named 2021\
          "expense.py import 2021 Jan-stmt-17.xlsx"   - import transactions\
 
 ## Description
-*Expense* is designed to help small businesses and sole proprioetrs to keep track of their expenses for book keeping and tax relates purposes.
+*Expense* is designed to help small businesses and sole proprietors to keep track of their expenses for bookkeeping and tax-related purposes.
 
-The user first initialize a new repository using the *init* command. This is usually done once a year.
+The user first initializes a new repository using the *init* command. Initialization is usually done once a year.
 
-Then the user uses the *import* command imports transactions from excel that were exported sources like: Bank statements, CreditCard Statement, PayPal activity etc.
+Then the user uses the *import* command to import transactions from excel files such as exported Bank statements, credit card statements, PayPal activity, etc.
 
-*Export* imports data from excel files having various headings and automatically detects the columns relared to:
+*Export* imports data from excel files having various headings and automatically detects the columns related to:
 1. **Date**  - date a transaction took place (mandatory).
 2. **Reference** - reference number for the transaction (optional)
 3. **Payee** - name of the payee (optional*)
@@ -49,47 +49,47 @@ Then the user uses the *import* command imports transactions from excel that wer
 
 \* Either Payee or Description must be present.
 
-After verifying the detected fields with the user *Expense* starts importing trandactions from input file into the repository.
+After verifying the detected fields with the user, *Expense* starts importing transactions from the input file into the repository.
 
-Every transaction is categorised accorsing to IRS 1040 Schedule C categories according to the transaction signature. 
+According to the transaction signature, every transaction is categorized according to IRS 1040 Schedule C categories. 
 
-The user is prompted to select a category for each trasnaction have a never seen before payee or description. *Expense* then remeberes the payee and description and will automatically categorize future transactions from the same payee having the same description. This greatly reduces the burden of adding recurring expenses.
+The user is prompted to select a category for each transaction that has a never seen before payee or description. *Expense* then remembers the payee and description and will automatically categorize future transactions from the same payee having the same description. This dramatically reduces the burden of adding recurring expenses.
 
-The user can categorise a transaction as "Not applicable" for example non-business expense, or a transaction which is not an expense. This transaction will be skipped and *Expence* will remember and skip future transactions that have the same payee and same description.
+The user can categorize a transaction as "Not applicable," for example, non-business expense or a transaction that is not an expense. This transaction will be skipped, and *Expense* will remember and skip future transactions with the same payee and exact description.
 
-The user can also categorize a transaction as oneof the applicable categories, but choose to skip indivdual ones that do not apply for any reason.
+The user can also categorize a transaction as one of the applicable categories but choose to skip individual ones that do not apply for any reason.
 
-The new entry is presented to the user for approval. Before the entry is added to the repo it is checked against the reference ID (date and sum are not good indicators as the same expence can happen twice in one day) before it is added to the repo.
+The new entry is presented to the user for approval. Before the entry is added to the repo, it is checked against the reference ID (date and sum are not good indicators as the same expense can happen twice in one day) before it is added to the repo.
 
-All transaction are logged into separet logs files of accepted, skipped, and dupilcate transaction to allow easy verification and tracability.
+All transactions are logged into separate logs files of accepted, skipped, and duplicate transactions to allow easy verification and traceability.
 
 Finally, upon use approval:
 1. All changes are saved.
-2. The input file is copied and its sha256 is added to its name (this prevents name colusion and allow content verification)
-3. All changes are added to the local git repository and comitted with a comment deisgnating the transaction input file name responsible for the update.
+2. The input file is copied, and its sha256 is added to its name (this prevents name collision and allow content verification)
+3. All changes are added to the local git repository and committed with a comment designating the transaction input file name responsible for the update.
 
 ### Adding manual entries (e.g. checks)
-*Expense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g. "check:1011") and then fed into the the system, which will save the "manual" input file together with all other input file for ltare restore or verification.
+*Expense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g., "check:1011") and then fed into the system, which will save the "manual" input file together with all other input files for later restoration or verification.
 
 ### Generating reports
-*Expense* currently does not have built in reports, reports can be generated from a **copy** of the Excel file.
+*Expense* currently does not have built-in reports; reports can be generated from a **copy** of the Excel file.
 
 ### Restoring from backup
-*Expense* currently does not have built in restore function. Restor can be done using the standard **git** interface
+*Expense* currently does not have a built-in restore function. Restore can be done using the standard **git** interface
 
 ### Manually "tweaking" files
-Because all files are visible, it is possible to manually "tweak" them. Tweaking should be done cautiously as it can break the system, however some tweaks are quite safe and will be preserved:
-1. Adjust the columns width and alignmnet of the exel file for better readability
+Because all files are visible, it is possible to manually "tweak" them. Tweaking should be cautiously done as it can break the system. However, some tweaks are pretty safe and will be preserved:
+1. Adjust the width and alignment of the columns of the excel file for better readability
 2. Make the header Bold-face for better readability.
 
-Some changes are more dangerous and should be done with cations. Also these chages alter the content of the repository which may not be inline with the logs. 
+Some changes are more dangerous and should be done with cations. Also, these changes alter the repository's content, which may not be in line with the logs. 
 
-1. Change individual values without altering the structire of the file.
-2. Delete entry in the excel file
-3. Manually add entry to the exel file
-4. Manually remore wrong category signature from the category json file.
+1. Change individual values without altering the structure of the file.
+2. Delete an entry in the excel file
+3. Manually add an entry to the excel file
+4. Manually remove a wrong category signature from the category JSON file.
 
-If you apply any change manually, it is recommended to update the git manually with a proper comment describing the change.
+If you apply any change manually, updating the git manually with a good comment describing the change is recommended.
 
 If you mistakenly break the system, the system can be restored from **git**.
 
