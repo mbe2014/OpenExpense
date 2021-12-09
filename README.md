@@ -2,21 +2,26 @@
 
 NO-FRILLS text only expense tracker for small business sole proprietorship
 
+This program only do one thing - process transctions from form excel files
+such as acnk transactions, credic card trabsaction and PayPal transactions,
+Categorize them by IRS 1040 Scheduel-C categories, and keep a very good tracking
+of everything with a continous backups of everything at a single file import granularity.
+
+
 ### Highlights and features
 
 - Automatically identify data headers.
 - Categorize transaction according to 1040 Schedule C expence caterogies.
 - Remember and automatically categorize recurring transcations.
 - All data is kept in visible Excel, CSV, or JSON format. No proprietery formats are used.
-- Automaticaly detects duplicate transactios by reference number/ID.
-- Keeps logs of ALL transactions including transactions that were accepted, skipped or deemd duplicates with their origin so everything can be tracked and verified if needed.
+- Automaticaly detect duplicate transactios by reference number/ID.
+- Keep logs of ALL transactions including transactions that were accepted, skipped or deemd duplicates with their origin so everything can be tracked to its source and verified if needed.
 - Automatically copy and save all input files with their sha256 hash.
 - Automatically create a local git repository and backup the entire repo with log files and input files. The git repository is updated after each import with a proper log entry so the repository can be restored at input file granularity.
 - Normalize all expense amount to positive numbers.
 
 These features, especially detection of duplilcates,nomalization on transaction amount and backup and restore capability can prevent havock cause by overlapping entries, user mistakes, and inconsistent sign convention from different sources.
 
-Note that some of these features are unique and do not exists eve in commercial accounting software such as QuickBooks:tm:
 
 ### Usage:
 "expense.py init \<dir\>"               - initializes an expense repository in folder \<dir\>\
@@ -88,9 +93,3 @@ If you apply any change manually, it is recommended to update the git manually w
 
 If you mistakenly break the system, the system can be restored from **git**.
 
-## TODO
-1. Set column width and alignmnet automatically.
-2. Make the header Bold
-3. Add reports - especially expense report by category
-4. Add charts (pie chart)?
-5. Add GUI wrapper (within browser)?
