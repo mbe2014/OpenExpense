@@ -1,9 +1,8 @@
-# "Expense"
+# Expense - NO-FRILS expense tracker
 
 NO-FRILS text only expense tracker for small business sole proprietorship
 
 ### Highlights and features
-While being a NO-FRILS text only program *Expense* have some features that do not exits even in commercial high profile accounting programs such as Intuit QuickBooks^TM^. 
 
 - Automatically identify data headers.
 - Categorize transaction according to 1040 Schedule C expence caterogies.
@@ -15,7 +14,9 @@ While being a NO-FRILS text only program *Expense* have some features that do no
 - Automatically create a local git repository and backup the entire repo with log files and input files. The git repository is updated after each import with a proper log entry so the repository can be restored at input file granularity.
 - Normalize all expense amount to positive numbers.
 
-These features, especially detection of duplilcates,nomalization on transaction amount and backup and restore capability can prevent havock cause by overlapping entries, user mistakes, and inconsistent sign convention from different sources.  
+These features, especially detection of duplilcates,nomalization on transaction amount and backup and restore capability can prevent havock cause by overlapping entries, user mistakes, and inconsistent sign convention from different sources.
+
+Note that some of these features are unique and do not exists eve in commercial accounting software such as QuickBooks:tm:
 
 ### Usage:
 "expense.py init \<dir\>"               - initializes an expense repository in folder \<dir\>\
