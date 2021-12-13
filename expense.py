@@ -217,7 +217,7 @@ def process(fname):
     ans = input("\nPlease confirm [Y/n]:")
     if ans == "n":
         print("Abort..\n")
-        return
+        sys.exit(0)
 
     if date_col == None or sum_col == None:
         print ("Date and amount fields are mandatory")
