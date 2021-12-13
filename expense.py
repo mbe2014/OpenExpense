@@ -151,17 +151,17 @@ def save_all(repo,fname, inp_name):
         json.dump(categories, f, indent=2) 
 
     with open(acc_log_name, 'a') as f:
-        f.write("\n"+inp_name+"\n")
+        f.write("\n"+inp_name+"\n\n")
         for x in accept_log:
             f.write(f"{x[0]},{x[1]},{x[2]},{x[3]},{x[4]},{x[5]}\n")
 
     with open(skp_log_name, 'a') as f:
-        f.write("\n"+inp_name+"\n")
+        f.write("\n"+inp_name+"\n\n")
         for x in skip_log:
             f.write(f"{x[0]},{x[1]},{x[2]},{x[3]},{x[4]},{x[5]}\n")
 
     with open(dup_log_name, 'a') as f:
-        f.write("\n"+inp_name+"\n")
+        f.write("\n"+inp_name+"\n\n")
         for x in dup_log:
             f.write(f"{x[0]},{x[1]},{x[2]},{x[3]},{x[4]},{x[5]}\n")
 
