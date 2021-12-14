@@ -236,7 +236,7 @@ def process(fname):
         amnt  = ins.cell(row=x,column=sum_col).value
 
         if date == None or amnt == None:
-            print ("Date and amount fields are mandatory")
+            print ("Date and amount entries are mandatory")
             print("Abort..\n")
             sys.exit(0)
 
