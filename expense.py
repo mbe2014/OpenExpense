@@ -68,7 +68,7 @@ categories = {"Advertising":[],
 # Field titles orgenized by priority. category tite (catg_title) is not
 # currently used is is present for future use
 date_title   = ["Date", "Transaction Date", "Trans. Date", "Posted Date"]
-ref_title    = ["Reference ID", "Reference Number", "Transaction ID"]
+ref_title    = ["Reference", "Reference ID", "Reference Number", "Transaction ID"]
 payee_title  = ["Payee","Name"]
 desc_title   = ["Description", "Memo", "Subject"]
 catg_title   = []
@@ -127,8 +127,12 @@ def init(repo, fname, reset):
     else:
         wb = xl.load_workbook(wb_name)
         ws = wb.active
-        for x in ws['B']:
-            reference_list.append(x.value)
+        # init reference list to detect duplicates
+        for x in range (2, ws.max_row+1):
+            ref = ws.cell(row=x,column=2).value
+            val = ws.cell(row=x,column=6).value
+            if ref != "na":
+                reference_list.append(ref + ":" + str(val))
 
     if os.path.isfile(cat_name):
         with open(cat_name, 'r') as f:
@@ -229,7 +233,7 @@ def process(fname):
         print("Abort..\n")
         sys.exit(0)
 
-    # Step 2. process reansactions
+    # Step 2. process transactions
     # ----------------------------
     for x in range (2,rows+1):
         date  = ins.cell(row=x,column=date_col).value
@@ -294,14 +298,19 @@ def process(fname):
         print("\n",entry)
 
         if (cat == "Not Applicable"):
-            print("skipped..\n")
-            skip_log.append(entry)
-            continue
+            print("\nNot Applicable entry detected..\n")
+            ans = input("\nSkip NA entry? [Y/n]:")
+            if ans != "n":
+                skip_log.append(entry)
+                continue
 
-        if ref in reference_list:
-            print("duplicate..\n")
-            dup_log.append(entry)
-            continue  
+        ref_sig = ref + ":" + str(amnt)
+        if ref != "na" and ref_sig in reference_list:
+            print("\nDuplicate detected..\n")
+            ans = input("\nSkip duplicate entry? [Y/n]:")
+            if ans != "n":
+                dup_log.append(entry)
+                continue  
 
         ans = input("\nPlease confirm [Y/n]:")
         if ans == "n":
