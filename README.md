@@ -1,4 +1,4 @@
-# *OpenExpense* - NO-FRILLS expense tracker
+# *TinyExpense* - NO-FRILLS expense tracker
 
 NO-FRILLS text only expense tracker for a small business or sole proprietorship
 
@@ -37,7 +37,7 @@ The user first initializes a new repository using the *init* command. Initializa
 
 Then the user uses the *import* command to import transactions from excel files such as exported Bank statements, credit card statements, PayPal activity, etc.
 
-*OpenExpense* imports data from excel files having various headings and automatically detect the columns related to:
+*TinyExpense* imports data from excel files having various headings and automatically detect the columns related to:
 1. **Date**  - date a transaction took place (mandatory).
 2. **Reference** - reference number for the transaction (optional)
 3. **Payee** - name of the payee (optional*)
@@ -48,13 +48,13 @@ Then the user uses the *import* command to import transactions from excel files 
 
 **Note:** Header should currently be in the first line. 
 
-After verifying the detected fields with the user, *OpenExpense* starts importing transactions from the input file into the repository.
+After verifying the detected fields with the user, *TinyExpense* starts importing transactions from the input file into the repository.
 
 According to the transaction signature, recurring transactions are categorized according to IRS 1040 Schedule C categories.
 
-The user is prompted to select a category for each transaction that has a never seen before payee or description. *OpenExpense* then remembers the payee and description and will automatically categorize future transactions from the same payee having the same description. This significantly reduces the burden of adding recurring expenses.
+The user is prompted to select a category for each transaction that has a never seen before payee or description. *TinyExpense* then remembers the payee and description and will automatically categorize future transactions from the same payee having the same description. This significantly reduces the burden of adding recurring expenses.
 
-The user can categorize a transaction as "Not applicable," for example, non-business expense or a transaction that is not an expense. This transaction will be skipped, and *OpenExpense* will remember and skip future transactions with the same payee and exact description.
+The user can categorize a transaction as "Not applicable," for example, non-business expense or a transaction that is not an expense. This transaction will be skipped, and *TinyExpense* will remember and skip future transactions with the same payee and exact description.
 
 The user can also categorize a transaction as one of the applicable categories but choose to skip individual ones that do not apply for any reason.
 
@@ -69,13 +69,13 @@ Finally, upon user approval:
 3. All changes are added to the local git repository and committed with a comment designating the transaction input file name responsible for the update.
 
 ### Adding manual entries (e.g. checks)
-*OpenExpense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g., "check:1011") and then fed into the system, which will save the "manual" input file together with all other input files for later restoration or verification.
+*TinyExpense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g., "check:1011") and then fed into the system, which will save the "manual" input file together with all other input files for later restoration or verification.
 
 ### Generating reports
-*OpenExpense* currently does not have built-in reports; reports can be generated from a **copy** of the Excel file.
+*TinyExpense* currently does not have built-in reports; reports can be generated from a **copy** of the Excel file.
 
 ### Restoring from backup
-*OpenExpense* currently does not have a built-in restore function. Restore can be done using the standard **git** interface
+*TinyExpense* currently does not have a built-in restore function. Restore can be done using the standard **git** interface
 for example, "git reset --hard HEAD^" will **permanently* delete the latest import. When a backup is restored this way - everything
 is restored, including logs and categories.
 
@@ -97,10 +97,10 @@ If you apply any change manually, updating the git manually with an appropriate 
 If you mistakenly break the system, the system can be restored from **git**.
 
 ### For Developers
-- *OpenExpense* uses "openpyxl," which provides tools that can add charts (e.g., pie charts) to the workbook and can be used to create reports
+- *TinyExpense* uses "openpyxl," which provides tools that can add charts (e.g., pie charts) to the workbook and can be used to create reports
    This is simply not currently implemented.
-- *OpenExpense* does not do *any* data manipulation except sign change when needed. If data manipulation is added, it needs to be done using decimal arithmetic as explained here: [Decimal fixed point and floating-point arithmetic](https://docs.python.org/3/library/decimal.html)
-- *OpenExpense* UI is spartan... good enough for me to work with, but can be significantly improved even if using TUI.
+- *TinyExpense* does not do *any* data manipulation except sign change when needed. If data manipulation is added, it needs to be done using decimal arithmetic as explained here: [Decimal fixed point and floating-point arithmetic](https://docs.python.org/3/library/decimal.html)
+- *TinyExpense* UI is spartan... good enough for me to work with, but can be significantly improved even if using TUI.
 - The detection of header title uses fixed (hardcoded) values. Some flexibility may be helpful, although I am not sure it should be as flexible as categories.
 - Git is done via shell. Python have libraries for git that can allow more functionaly. 
 - Import of CSV files would be helpful (not supported by openpyxl). I am currently using gnumeric ssconvert to convert csv to xlsx files manually.
