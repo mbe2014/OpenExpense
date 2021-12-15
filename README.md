@@ -103,4 +103,5 @@ If you mistakenly break the system, the system can be restored from **git**.
 - *OpenExpense* UI is spartan... good enough for me to work with, but can be significantly improved even if using TUI.
 - The detection of header title uses fixed (hardcoded) values. Some flexibility may be helpful, although I am not sure it should be as flexible as categories.
 - Git is done via shell. Python have libraries for git that can allow more functionaly. 
+- Import of CSV files would be helpful (not supported by openpyxl). I am currently using gnumeric ssconvert to convert csv to xlsx files manually.
 
