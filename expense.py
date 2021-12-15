@@ -72,7 +72,7 @@ ref_title    = ["Reference", "Reference ID", "Reference Number", "Transaction ID
 payee_title  = ["Payee","Name"]
 desc_title   = ["Description", "Memo", "Subject"]
 catg_title   = []
-sum_title    = ["Amount","Net"]
+sum_title    = ["Amount","Net", "Sum"]
 
 # List to save transaction that are accepted, skipped, or duplicate to their log file
 accept_log = []
