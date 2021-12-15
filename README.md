@@ -104,4 +104,5 @@ If you mistakenly break the system, the system can be restored from **git**.
 - The detection of header title uses fixed (hardcoded) values. Some flexibility may be helpful, although I am not sure it should be as flexible as categories.
 - Git is done via shell. Python have libraries for git that can allow more functionaly. 
 - Import of CSV files would be helpful (not supported by openpyxl). I am currently using gnumeric ssconvert to convert csv to xlsx files manually.
+- Categories are now set to 1040 schedule C, it is just a matter of replaceing or adding a selection to adjust the code for peronal/home use.  A better UI and reports/charts are definetly needed in this case.
 
