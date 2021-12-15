@@ -46,6 +46,8 @@ Then the user uses the *import* command to import transactions from excel files 
 
 \* Either Payee or Description must be present.
 
+**Note:** Header should currently be in the first line. 
+
 After verifying the detected fields with the user, *OpenExpense* starts importing transactions from the input file into the repository.
 
 According to the transaction signature, recurring transactions are categorized according to IRS 1040 Schedule C categories.
