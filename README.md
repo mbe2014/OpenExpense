@@ -97,7 +97,7 @@ If you mistakenly break the system, the system can be restored from **git**.
 ### For Developers
 - *OpenExpense* uses "openpyxl," which provides tools that can add charts (e.g., pie charts) to the workbook and can be used to create reports
    This is simply not currently implemented.
-- *OpenExpense* does not do *any* data manipulation except sign change when needed. If data manipulation is added, it needs to be done using decimal arithmetic as explained here: [https://docs.python.org/3/library/decimal.html](Decimal fixed point and floating-point arithmetic)
+- *OpenExpense* does not do *any* data manipulation except sign change when needed. If data manipulation is added, it needs to be done using decimal arithmetic as explained here: [Decimal fixed point and floating-point arithmetic](https://docs.python.org/3/library/decimal.html)
 - *OpenExpense* UI is spartan... good enough for me to work with, but can be significantly improved even if using TUI.
 - The detection of header title uses fixed (hardcoded) values. Some flexibility may be helpful, although I am not sure it should be as flexible as categories.
 
