@@ -132,7 +132,7 @@ def init(repo, fname, reset):
             ref = ws.cell(row=x,column=2).value
             val = ws.cell(row=x,column=6).value
             if ref != "na":
-                reference_list.append(ref + ":" + str(val))
+                reference_list.append(str(ref) + ":" + str(val))
 
     if os.path.isfile(cat_name):
         with open(cat_name, 'r') as f:
@@ -250,7 +250,7 @@ def process(fname):
         cat   = None
 
         if ref_col != None: 
-            ref   = ins.cell(row=x,column=ref_col).value        
+            ref   = str(ins.cell(row=x,column=ref_col).value)        
         if payee_col != None:
             payee = ins.cell(row=x,column=payee_col).value
         if desc_col != None:
