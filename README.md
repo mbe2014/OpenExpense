@@ -112,7 +112,7 @@ If it is a one-off puchase, it can be categorized either as Depreciation if it i
 entirly at the same year.
 Cloud based services including web domains, office 360, Amazon AWS, google drive - anything that has a montly fee is categorized as Rental (other)
 
-# DISCLAIMER
+## DISCLAIMER
 I’m not a certified financial/tax advisor nor a certified financial/tax analyst nor an economist nor a CPA nor an accountant nor a lawyer. 
 I’m not a finance/tax professional through formal education or any other means. Tips included in this section were collected from the Web
 from places like TurboTax Community. USE TIPS AT YOUR OWN RISK. 
