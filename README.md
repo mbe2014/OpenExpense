@@ -106,3 +106,24 @@ If you mistakenly break the system, the system can be restored from **git**.
 - Import of CSV files would be helpful (not supported by openpyxl). I am currently using gnumeric ssconvert to convert csv to xlsx files manually.
 - Categories are now set to 1040 schedule C, it is just a matter of replaceing or adding a selection to adjust the code for peronal/home use.  A better UI and reports/charts are definetly needed in this case.
 
+### Tip for users
+#### Which Category to use for Software and Cloud Services
+If it is a one-off puchase, it can be categorized either as Depreciation if it is depretioated over multiple years or as other expenses if it is claimed
+entirly at the same year.
+Cloud based services including web domains, office 360, Amazon AWS, google drive - anything that has a montly fee is categorized as Rental (other)
+
+# DISCLAIMER
+I’m not a certified financial/tax advisor nor a certified financial/tax analyst nor an economist nor a CPA nor an accountant nor a lawyer. 
+I’m not a finance/tax professional through formal education or any other means. Tips included in this section were collected from the Web
+from places like TurboTax Community. USE TIPS AT YOUR OWN RISK. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
