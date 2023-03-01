@@ -279,13 +279,17 @@ def process(fname):
         # ---------------------------------------------------------------------
         if cat == None:
             print("\033[H\033[J")
-            for x in range (1, len(key_list)):
+            for x in range (0, len(key_list)):
                 print (x, key_list[x])
 
-            ans = 0
-            while ans < 1 or ans > len(key_list):
+            ans = -1
+            while ans < 0 or ans >= len(key_list):
                 ans = input ("\nSelect category number for: " + pattern + ": ")
-                ans = int(ans)
+                try:
+                    ans = int(ans)
+                except:
+                    print("Please enter integer between 0 and ", len(key_list)-1)
+                    ans=-1
 
             cat = key_list[ans]
             categories[cat].append(pattern)
@@ -293,7 +297,12 @@ def process(fname):
 
         # Step 2.3 prepare new entry and update repo and logs as needed
         # -------------------------------------------------------------    
-        entry = (date, ref, payee, cat, desc, abs(amnt))
+        try:
+            entry = (date, ref, payee, cat, desc, abs(amnt))
+        except:
+            print ("Error in creating an entry. Is amount a number?)")
+            print("Abort..\n")
+            sys.exit(0)
 
         print("\n",entry)
 

@@ -18,6 +18,7 @@ using continuous backups at a single import granularity.
 - Automatically copy and save all input files with their sha256 hash.
 - Automatically create a local git repository and backup the entire repo with log files and input files. The git repository is updated after each import with a proper log entry so the repository can be restored at input file granularity.
 - Normalize expense amount to positive numbers.
+- Summerizes expenses witn breakdown by caterories
 
 These features, especially detection of duplicates, normalization of the transaction amount, and backup and restore capability, can prevent havoc caused by overlapping entries, user mistakes, and inconsistent sign conventions from different sources.
 
@@ -72,7 +73,11 @@ Finally, upon user approval:
 *TinyExpense* currently does not have a manual entry from the command line. Checks and other "manual" expensed should be added to an excel file with appropriate reference code (e.g., "check:1011") and then fed into the system, which will save the "manual" input file together with all other input files for later restoration or verification.
 
 ### Generating reports
-*TinyExpense* currently does not have built-in reports; reports can be generated from a **copy** of the Excel file.
+*TinyExpense* currently only have one report - expenses by IRS categories.\
+to generate a report call:\
+"tax_report.py \<dir\>"\
+Where \<dir\> is the same as above (usually the year is used).
+
 
 ### Restoring from backup
 *TinyExpense* currently does not have a built-in restore function. Restore can be done using the standard **git** interface
@@ -105,4 +110,5 @@ If you mistakenly break the system, the system can be restored from **git**.
 - Git is done via shell. Python have libraries for git that can allow more functionaly. 
 - Import of CSV files would be helpful (not supported by openpyxl). I am currently using gnumeric ssconvert to convert csv to xlsx files manually.
 - Categories are now set to 1040 schedule C, it is just a matter of replaceing or adding a selection to adjust the code for peronal/home use.  A better UI and reports/charts are definetly needed in this case.
+- Reports should be integrated into the main program
 
